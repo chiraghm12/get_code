@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/admin.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>Admin Dashboard</h1>
+                    <span class="subheading">Admin Can Edit All Poasts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h1>Basic Options</h1>
+                <a href="/admin"><button class="btn btn-primary text-uppercase">Dashboard Home</button></a>
+                <a href="/dashboardpost"><button class="btn btn-primary text-uppercase">&larr;Back</button></a>
+                <hr>
+                <h1>Add/Edit Posts</h1>
+                <form id="shareForm" data-sb-form-api-token="API_TOKEN" action="/edit/{{post.srno}}" method="Post">
+                    <div class="form-floating">
+                        <input class="form-control" name="title" id="title" type="text" value="{{post.title}}"
+                            placeholder="Enter your Title..." data-sb-validations="required">
+                        <label for="title">Title</label>
+                        <div class="invalid-feedback" data-sb-feedback="title:required">A title is required.</div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="subtitle" id="subtitle" type="text" value="{{post.subtitle}}"
+                            placeholder="Enter your subtitle..." data-sb-validations="required,subtitle">
+                        <label for="subtitle">Subtitle</label>
+                        <div class="invalid-feedback" data-sb-feedback="subtitle:required">An subtitle is required.
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="slug" id="slug" type="text" value="{{post.slug}}"
+                            placeholder="Enter your slug..." data-sb-validations="required,slug">
+                        <label for="slug">Slug</label>
+                        <div class="invalid-feedback" data-sb-feedback="slug:required">An Slug is required.</div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="disc" id="disc" type="text" value="{{post.disc}}"
+                            placeholder="Enter your disc..." data-sb-validations="required">
+                        <label for="disc">Description</label>
+                        <div class="invalid-feedback" data-sb-feedback="disc:required">An Description is required.</div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="lang" id="lang" type="text" value="{{post.lang}}"
+                            placeholder="Enter your lang..." data-sb-validations="required">
+                        <label for="lang">Language</label>
+                        <div class="invalid-feedback" data-sb-feedback="lang:required">An Language is required.</div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="codefilename" id="codefilename" type="text" value="{{post.codefilename}}"
+                            placeholder="Enter your codefile name..." data-sb-validations="required">
+                        <label for="codefilename">Codefile Name</label>
+                        <div class="invalid-feedback" data-sb-feedback="codefilename:required">An Codefile Name is required.</div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" type="file" name="codefile" id="codefile" type="text"
+                            accept=".c, .cpp, .py, .class" placeholder="Enter codefile name..." required />
+                        <label for="codefile">Codefile</label>
+                        <div class="invalid-feedback" data-sb-feedback="codefile:required">An Codefile is
+                            required.</div>
+                    </div>
+                    <br />
+                    <br />
+                    <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
+                </form>
+                <hr>
+                <br>
+                <a href="/logout"><button style="margin-left: 39%; margin-right: auto;"
+                        class="btn btn-primary text-uppercase">Logout</button></a>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

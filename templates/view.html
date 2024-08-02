@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/admin.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>Admin Dashboard</h1>
+                    <span class="subheading">Admin Can View All Contacts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h1>Basic Options</h1>
+                <a href="/admin"><button class="btn btn-primary text-uppercase">Dashboard Home</button></a>
+                <a href="/dashboardcontact"><button class="btn btn-primary text-uppercase">&larr;Back</button></a>
+                <hr>
+                <h1>View Contacts</h1>
+                <form id="Form" data-sb-form-api-token="API_TOKEN">
+                    <div class="form-floating">
+                        <input class="form-control" name="name" id="name" type="text" value="{{post.name}}"
+                            placeholder="Enter your Name..." data-sb-validations="required">
+                        <label for="name">Name</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">A Name is required.</div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="email" id="email" type="email" value="{{post.email}}"
+                            placeholder="Enter your email..." data-sb-validations="required">
+                        <label for="email">Email</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="phone" id="phone" type="tel" value="{{post.phone}}"
+                            placeholder="Enter your phone..." data-sb-validations="required">
+                        <label for="phone">Phone Number</label>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">An Phone Number is required.
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="msg" id="msg" value="{{post.msg}}"
+                            placeholder="Enter your Mesaage..." style="height: 12rem" data-sb-validations="required">
+                        <label for="msg">Message</label>
+                        <div class="invalid-feedback">A message is required.</div>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" name="date" id="date" value="{{post.date}}" data-sb-validations="required">
+                        <label for="date">Date</label>
+                    </div>
+                </form>
+
+                <hr>
+                <a href="/logout"><button style="margin-left: 39%; margin-right: auto;"
+                        class="btn btn-primary text-uppercase">Logout</button></a>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

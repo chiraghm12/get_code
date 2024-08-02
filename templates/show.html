@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/5.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>{{post.title}}</h1>
+                    <span class="subheading">{{post.subtitle}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p><h3>Description : </h3></p>
+                <p>{{post.description}}</p>
+                <p><h3>Language : </h3></p>
+                <p>{{post.language}}</p>
+                <!-- <p><h3>Download File : </h3></p> -->
+                <!-- <form id="shareForm" data-sb-form-api-token="API_TOKEN" action="/download_link/{{post.codefilename}}" method="Post"> -->
+                <p><a class="btn btn-primary text-uppercase" href="/download_link/{{post.srno}}" target="_blank"> Download File </a></p>
+                <!-- <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Download File</button> -->
+            </div>
+        </div>
+    </div>
+</main>
+
+    {% endblock %}

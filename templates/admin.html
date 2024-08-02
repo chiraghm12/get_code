@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<script type = "text/javascript">  
+    function fun() { 
+        var un = document.querySelector('#uname').value;
+        var ps = document.querySelector('#password').value;
+        if(un == "{{params['admin-uname']}}" && ps == "{{params['admin-pass']}}") 
+        {
+            alert (" Admin Logged In Successfully... "); 
+        }
+        else
+        {
+            alert("Invalid Username or Password..!!");
+        }
+    }  
+</script> 
+
+ <!-- Page Header-->
+ <header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/admin.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>Admin Login</h1>
+                    <span class="subheading">Only Admin Can Login</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="my-5">
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="/admin" method="Post">
+                        <div class="form-floating">
+                            <input class="form-control" name="uname" id="uname" type="text" placeholder="Enter your username..." data-sb-validations="required" />
+                            <label for="name">User Name</label>
+                            <div class="invalid-feedback" data-sb-feedback="uname:required">A username is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="password" id="password" type="password" placeholder="Enter your password..." data-sb-validations="required" />
+                            <label for="password">Password</label>
+                            <div class="invalid-feedback" data-sb-feedback="password:required">An password is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="password:password">Password is not valid.</div>
+                        </div>
+                        <br />
+                        <button class="btn btn-primary text-uppercase" id="submitButton" type="submit" onclick="fun()">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}
