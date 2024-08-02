@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+{% block body %}
+<script type="text/javascript">
+    function fun() {
+        alert(" Post is Posted Successfully... ");
+    }  
+</script>
+<header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/post.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1>Make Post </h1>
+                    <h2 class="subheading">Only Admin Can Add The Post</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{category}} alert-block">  
+        <button type="button" class="close" data-dismiss="alert"></button>   
+            <strong>{{ message }}</strong>  
+    </div>  
+    {% endfor %}
+    {% endif %}
+    {% endwith %} -->
+
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h1>Basic Options</h1>
+                <a href="/admin"><button class="btn btn-primary text-uppercase">Dashboard Home</button></a>
+                <a href="/dashboardpost"><button class="btn btn-primary text-uppercase">&larr;Back</button></a>
+                <hr>
+                <p>
+                <h2>Add The Post</h2>
+                </p>
+                <div class="my-5">
+                    <form id="shareForm" data-sb-form-api-token="API_TOKEN" action="/post" method="Post"
+                        enctype="multipart/form-data">
+                        <div class="form-floating">
+                            <input class="form-control" name="name" id="name" type="text"
+                                value="{{params['admin-name']}}" placeholder="Enter your name..." required />
+                            <label for="name">Name</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="email" id="email" type="email"
+                                value="{{params['admin-email']}}" placeholder="Enter your email..." required />
+                            <label for="email">Email address</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="title" id="title" type="text"
+                                placeholder="Enter your title..." required />
+                            <label for="title">Title</label>
+                            <div class="invalid-feedback" data-sb-feedback="title:required">An Title is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="subtitle" id="subtitle" type="text"
+                                placeholder="Enter your subtitle..." required />
+                            <label for="subtitle">Subtitle</label>
+                            <div class="invalid-feedback" data-sb-feedback="subtitle:required">An Subtitle is required.
+                            </div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="slug" id="slug" type="text"
+                                placeholder="Enter your slug..." required />
+                            <label for="slug">Slug</label>
+                            <div class="invalid-feedback" data-sb-feedback="slug:required">An Slug is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="lang" id="lang" type="text"
+                                placeholder="Enter the language..." required />
+                            <label for="lang">Language</label>
+                            <div class="invalid-feedback" data-sb-feedback="lang:required">An Lang is required.</div>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" name="disc" id="disc" type="text"
+                                placeholder="Enter the description..." required />
+                            <label for="disc">Description</label>
+                            <div class="invalid-feedback" data-sb-feedback="disc:required">An Discription is required.
+                            </div>
+                        </div>
+                        <!-- <div class="form-floating">
+                            <input class="form-control" name="codefilename" id="codefilename" type="text"
+                                placeholder="Enter codefile name..." required />
+                            <label for="codefilename">Codefile Name</label>
+                            <div class="invalid-feedback" data-sb-feedback="codefilename:required">An Codefile name is
+                                required.</div>
+                        </div> -->
+                        <div class="form-floating">
+                            <input class="form-control" type="file" name="codefile" id="codefile" type="text"
+                                accept=".c, .cpp, .py, .class" placeholder="Enter codefile name..." required />
+                            <label for="codefile">Codefile</label>
+                            <div class="invalid-feedback" data-sb-feedback="codefile:required">An Codefile is
+                                required.</div>
+                        </div>
+                        <br />
+                        <button class="btn btn-primary text-uppercase" id="submitButton" type="submit"
+                            onclick="fun()">Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

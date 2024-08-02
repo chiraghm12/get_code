@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/admin.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>Admin Dashboard</h1>
+                    <span class="subheading">Admin Can Edit All Poasts</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h1>Basic Options</h1>
+                <a href="/edit/0"><button class="btn btn-primary text-uppercase">Add A New Post</button></a>
+                <a href="/logout"><button class="btn btn-primary text-uppercase">Logout</button></a>
+                <hr>
+                <h3>Search Posts</h3>
+                <form id="serach" action="/searchtextdashboard" method="post">
+                    <div class="input-group">
+                        <input type="search" id="search" name="search" class="form-control rounded" placeholder="Search"
+                            required />
+                        <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Search</button>
+                    </div>
+                </form>
+                <br>
+                <form id="serachform" action="/searchdatedashboard" method="post">
+                    <div>
+                        <h5>Search By Date </h5> <input type="date" id=date name="date" required />
+                        <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Search</button>
+                    </div>
+                </form>
+                <br>
+                <hr>
+                <h1>Edit Posts</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Titlee</th>
+                            <th>Date</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in posts %}
+                        <tr>
+                            <td>{{post.srno}}</td>
+                            <td>{{post.title}}</td>
+                            <td>{{post.date}}</td>
+                            <td><a href="/edit/{{post.srno}}"><button
+                                        class="btn btn-primary text-uppercase">Edit</button></a></td>
+                            <td><button class="btn btn-primary text-uppercase">Delete</button></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

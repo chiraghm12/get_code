@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/about.jpg')}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>About Get Code</h1>
+                            <span class="subheading">This is what is Get Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Get Code is platform where you can get specified code.</p>
+                        <p>On this platform you can download code file. You can also Ask for Your Doubt and ask for any code On this platform.</p>
+                        <p>This platform is absolutely Free for anyone. You have not pay anything for Code.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% endblock %}
