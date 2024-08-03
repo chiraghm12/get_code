@@ -2,16 +2,17 @@
 
 ## Project Overview
 
-The Get Code Blog/Website project aims to create a web platform combining both backend functionalities and a frontend UI. This platform allows users to download specific code files and view posts. If the requested code file is not available, users can contact the admin to request it.
+The **Get Code** Blog/Website project aims to create a web platform combining both backend functionalities and a frontend UI. This platform allows users to download specific code files and view posts. If the requested code file is not available, users can contact the admin to request it.
 
+![Home Page](website_photos/image1.png)
 
 #### Frontend
 
-The frontend of the Get Code Blog/Website project is designed using HTML and CSS to provide a clean and user-friendly interface. Jinja templates are employed to dynamically render content and integrate with the backend seamlessly. HTML structures the content, CSS styles it to enhance visual appeal, and Jinja templates facilitate the presentation of dynamic data. This combination ensures that users have an interactive and engaging experience while navigating the website and accessing code files and posts.
+The frontend of the Get Code Blog/Website project is designed using **HTML** and **CSS** to provide a clean and user-friendly interface. **Jinja** templates are employed to dynamically render content and integrate with the backend seamlessly. HTML structures the content, CSS styles it to enhance visual appeal, and Jinja templates facilitate the presentation of dynamic data. This combination ensures that users have an interactive and engaging experience while navigating the website and accessing code files and posts.
 
 #### Backend
 
-The backend of the Get Code Blog/Website project is developed using Python with the Flask framework. Flask is used to handle web requests and manage the application’s routing. For database interaction, SQLAlchemy is employed as the Object-Relational Mapping (ORM) tool, facilitating smooth communication between the Flask application and the MySQL database. SQLAlchemy simplifies database operations by allowing developers to use Python classes to represent database tables and execute queries. This setup ensures efficient and scalable data management for the application.
+The backend of the Get Code Blog/Website project is developed using **Python** with the **Flask** framework. Flask is used to handle web requests and manage the application’s routing. For database interaction, **SQLAlchemy** is employed as the Object-Relational Mapping (ORM) tool, facilitating smooth communication between the **Flask** application and the **MySQL** database. SQLAlchemy simplifies database operations by allowing developers to use Python classes to represent database tables and execute queries. This setup ensures efficient and scalable data management for the application.
 
 ### User and Admin Features
 
@@ -99,13 +100,13 @@ Create config.json file and add configuration params:
 
 ## Running the Appliacation
 
-To run the Flask application in development mode, use:
+* To run the Flask application in development mode, use:
 
-`python Website.py`
+    `python Website.py`
 
-For production deployment, use a WSGI server like Gunicorn:
+* For production deployment, use a WSGI server like Gunicorn:
 
-`gunicorn --bind 0.0.0.0:8000 wsgi:app`
+    `gunicorn --bind 0.0.0.0:8000 wsgi:app`
 
 
 ## Acknowledgements
