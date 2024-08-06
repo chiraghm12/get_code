@@ -111,6 +111,8 @@ Create config.json file and add configuration params:
 
 ## Acknowledgements
 
+We would like to thank the following resources and libraries that made this project possible:
+
 * **Flask:** A lightweight WSGI web application framework in Python that provides the necessary tools and libraries for building web applications.
 * **SQLAlchemy:** An ORM library for Python that simplifies database interactions and management.
 * **HTML/CSS:** The foundational technologies for creating and styling the frontend of the website.
