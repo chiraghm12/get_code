@@ -45,27 +45,36 @@ The backend of the Get Code Blog/Website project is developed using **Python** w
 
 1. Clone the repository:
 
-    `git clone https://github.com/username/repository.git` 
-
-    `cd repository`
+    ```bash
+    git clone https://github.com/username/repository.git
+    cd repository
+    ```
 
 2. Create Virtual Environment:
     
-    `python -m venv venv`
+    ```bash
+    python -m venv venv
+    ```
 
 3. Activate the Virtual Environment:
 
     * On Windows:
     
-        `venv\Scripts\activate`
+        ```bash
+        venv\Scripts\activate
+        ```
     
     * On Mac or Linux:
 
-        `source venv/bin/activate`
+        ```bash
+        source venv/bin/activate
+        ```
 
 4. Install the required packages:
 
-    `pip install -r requirements.txt`
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 
 ## Configuraton
@@ -102,11 +111,15 @@ Create config.json file and add configuration params:
 
 * To run the Flask application in development mode, use:
 
-    `python Website.py`
+    ```bash
+    python Website.py
+    ```
 
 * For production deployment, use a WSGI server like Gunicorn:
 
-    `gunicorn --bind 0.0.0.0:8000 wsgi:app`
+    ```bash
+    gunicorn --bind 0.0.0.0:8000 wsgi:app
+    ```
 
 
 ## Acknowledgements
